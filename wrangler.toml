@@ -1,5 +1,7 @@
-# Cloudflare Workers 配置，线上已由deploy.yml接管，这里仅供本地测试
-name = "cf-server-monitor"
+# Cloudflare Workers Builds production configuration
+name = "vps-monitor-2a3dec"
+workers_dev = true
+routes = [{ pattern = "monitor.ningzimu.vip", custom_domain = true }]
 main = "src/index.js"
 compatibility_date = "2024-12-01"
 compatibility_flags = ["nodejs_compat"]
@@ -19,7 +21,8 @@ binding = "ASSETS"
 
 [[d1_databases]]
 binding = "DB"
-database_name = "server-monitor-db"
+database_name = "vps-monitor-three"
+database_id = "b64e7ca3-a9fe-4fce-899f-7e6e507b9436"
 
 # Durable Objects：实时指标广播中心
 # 注意：首次部署前需要执行 `wrangler durable-object create MetricsBroadcaster --class MetricsBroadcaster`
