@@ -122,7 +122,7 @@ const defaults = {
   default_language: 'auto',
   theme_options: {},
   auto_discovery: 'false',
-  is_public: 'true',
+  is_public: 'false',
   show_price: 'true',
   show_expire: 'true',
   show_tf: 'true',
